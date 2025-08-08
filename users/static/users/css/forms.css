@@ -1,0 +1,527 @@
+.signin-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #f0f4f8;
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    transition: background-color 0.3s ease;
+}
+
+.signin-container:hover {
+    background-color: #e9f0fa;
+}
+
+.signin-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #004085;
+}
+
+.signin-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-container label {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #3a3a3a;
+}
+
+.signin-container input[type="text"],
+.signin-container input[type="email"],
+.signin-container input[type="password"] {
+    padding: 12px 14px;
+    border: 1.5px solid #bfc9d9;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease;
+}
+
+.signin-container input[type="text"]:focus,
+.signin-container input[type="email"]:focus,
+.signin-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 6px #a8c0ff;
+}
+
+.signin-container button {
+    margin-top: 28px;
+    padding: 12px 0;
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.signin-container button:hover {
+    background-color: #003d80;
+}
+
+.signin-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #f0f4f8;
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    transition: background-color 0.3s ease;
+}
+
+.signin-container:hover {
+    background-color: #e9f0fa;
+}
+
+.signin-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #004085;
+}
+
+.signin-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-container label {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #3a3a3a;
+}
+
+.signin-container input[type="text"],
+.signin-container input[type="email"],
+.signin-container input[type="password"] {
+    padding: 12px 14px;
+    border: 1.5px solid #bfc9d9;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease;
+}
+
+.signin-container input[type="text"]:focus,
+.signin-container input[type="email"]:focus,
+.signin-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 6px #a8c0ff;
+}
+
+.signin-container button {
+    margin-top: 28px;
+    padding: 12px 0;
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.signin-container button:hover {
+    background-color: #003d80;
+}
+
+
+/* static/users/css/forms.css */
+/* static/users/css/forms.css */
+
+.signup-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #f0f4f8; /* same as signin */
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    transition: background-color 0.3s ease;
+}
+
+.signup-container:hover {
+    background-color: #e9f0fa; /* same hover as signin */
+}
+
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #004085; /* same title color as signin */
+}
+
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-container label {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #3a3a3a;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+    padding: 12px 14px;
+    border: 1.5px solid #bfc9d9; /* same border */
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease;
+}
+
+.signup-container input[type="text"]:focus,
+.signup-container input[type="email"]:focus,
+.signup-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0056b3; /* focus border same as signin */
+    box-shadow: 0 0 6px #a8c0ff;
+}
+
+.signup-container button {
+    margin-top: 28px;
+    padding: 12px 0;
+    background-color: #0056b3; /* same blue as signin button */
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.signup-container button:hover {
+    background-color: #003d80; /* same hover as signin button */
+}
+.signin-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #f0f4f8;
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    transition: background-color 0.3s ease;
+}
+
+.signin-container:hover {
+    background-color: #e9f0fa;
+}
+
+.signin-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #004085;
+}
+
+.signin-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-container label {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #3a3a3a;
+}
+
+.signin-container input[type="text"],
+.signin-container input[type="email"],
+.signin-container input[type="password"] {
+    padding: 12px 14px;
+    border: 1.5px solid #bfc9d9;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease;
+}
+
+.signin-container input[type="text"]:focus,
+.signin-container input[type="email"]:focus,
+.signin-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 6px #a8c0ff;
+}
+
+.signin-container button {
+    margin-top: 28px;
+    padding: 12px 0;
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.signin-container button:hover {
+    background-color: #003d80;
+}
+
+.signin-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #f0f4f8;
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    transition: background-color 0.3s ease;
+}
+
+.signin-container:hover {
+    background-color: #e9f0fa;
+}
+
+.signin-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #004085;
+}
+
+.signin-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-container label {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #3a3a3a;
+}
+
+.signin-container input[type="text"],
+.signin-container input[type="email"],
+.signin-container input[type="password"] {
+    padding: 12px 14px;
+    border: 1.5px solid #bfc9d9;
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease;
+}
+
+.signin-container input[type="text"]:focus,
+.signin-container input[type="email"]:focus,
+.signin-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 6px #a8c0ff;
+}
+
+.signin-container button {
+    margin-top: 28px;
+    padding: 12px 0;
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.signin-container button:hover {
+    background-color: #003d80;
+}
+
+
+/* static/users/css/forms.css */
+/* static/users/css/forms.css */
+
+.signup-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #f0f4f8; /* same as signin */
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    transition: background-color 0.3s ease;
+}
+
+.signup-container:hover {
+    background-color: #e9f0fa; /* same hover as signin */
+}
+
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #004085; /* same title color as signin */
+}
+
+.signup-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-container label {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #3a3a3a;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+    padding: 12px 14px;
+    border: 1.5px solid #bfc9d9; /* same border */
+    border-radius: 6px;
+    margin-top: 8px;
+    font-size: 1rem;
+    transition: border-color 0.25s ease;
+}
+
+.signup-container input[type="text"]:focus,
+.signup-container input[type="email"]:focus,
+.signup-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0056b3; /* focus border same as signin */
+    box-shadow: 0 0 6px #a8c0ff;
+}
+
+.signup-container button {
+    margin-top: 28px;
+    padding: 12px 0;
+    background-color: #0056b3; /* same blue as signin button */
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.signup-container button:hover {
+    background-color: #003d80; /* same hover as signin button */
+}
+
+/* Base signin container with smooth transition */
+.signin-container {
+    max-width: 400px;
+    margin: 60px auto;
+    background: #f0f4f8;
+    padding: 35px 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Hover effect */
+.signin-container:hover {
+    background-color: #e9f0fa;
+}
+
+/* Error state: softer red background, subtle red shadow */
+.signin-container-error {
+    background-color: #fdecea; /* very light warm red/pink */
+    box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4); /* bootstrap danger red with transparency */
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Inputs border change on error */
+.signin-container-error input[type="text"],
+.signin-container-error input[type="email"],
+.signin-container-error input[type="password"] {
+    border-color: #dc3545; /* bootstrap danger red */
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Inputs focus on error: stronger red glow */
+.signin-container-error input[type="text"]:focus,
+.signin-container-error input[type="email"]:focus,
+.signin-container-error input[type="password"]:focus {
+    border-color: #b02a37; /* darker red */
+    box-shadow: 0 0 8px #dc3545aa;
+    outline: none;
+}
+
+/* Adjust heading color slightly to blend with error */
+.signin-container-error h2 {
+    color: #a71d2a; /* dark red, but not too harsh */
+}
+
+/* Button colors remain consistent but you can add a subtle effect */
+.signin-container-error button {
+    background-color: #b02a37; /* darker red shade on error */
+    transition: background-color 0.5s ease;
+}
+
+.signin-container-error button:hover {
+    background-color: #7a1b24;
+}
+
+
+
+/* Keep all your existing styles unchanged */
+
+/* Add responsive rules */
+@media (max-width: 480px) {
+  .signin-container,
+  .signup-container {
+    max-width: 90%;       /* Use almost full width on small screens */
+    margin: 30px auto;    /* Less vertical margin */
+    padding: 25px 20px;   /* Slightly smaller padding */
+    font-size: 0.95rem;   /* Slightly smaller font size for inputs and labels */
+  }
+
+  .signin-container h2,
+  .signup-container h2 {
+    font-size: 1.5rem;    /* Slightly smaller heading */
+  }
+
+  .signin-container input[type="text"],
+  .signin-container input[type="email"],
+  .signin-container input[type="password"],
+  .signup-container input[type="text"],
+  .signup-container input[type="email"],
+  .signup-container input[type="password"] {
+    font-size: 0.95rem;   /* Smaller inputs font */
+    padding: 10px 12px;  /* Smaller input padding */
+  }
+
+  .signin-container button,
+  .signup-container button {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+}
+
+

@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Sign Up
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'users/css/forms.css' %}">
+
+<div class="signup-container">
+    <h2>📝 Sign Up</h2>
+    <form action= "{% url 'users:registration' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
