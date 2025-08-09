@@ -1,4 +1,7 @@
 from django.shortcuts import render
 
 def homepage(request):
-    return render(request, 'layout.html')
+    context = {
+        'active_page': 'homepage'
+    }
+    return render(request, 'todoweb/homepage.html', context)

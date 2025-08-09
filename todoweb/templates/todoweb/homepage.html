@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<div class="mx-auto my-5 p-5 bg-white bg-opacity-75 rounded-4 shadow text-center" 
+     style="max-width: 600px; backdrop-filter: blur(10px);">
+  <h1 class="display-4 fw-bold mb-3">
+    Welcome to TodoApp 📝
+  </h1>
+  <hr class="mx-auto mb-4" style="width: 80px; border-top: 3px solid #0d6efd;">
+  <p class="lead text-secondary mb-4">
+    Organize your tasks effortlessly and boost your productivity.<br>
+    Create, manage, and track your to-do lists all in one place.
+  </p>
+  <a href="{% url 'tasks:my-tasks' %}" class="btn btn-primary btn-lg rounded-pill px-5 shadow">
+    View Your Todo Lists
+  </a>
+</div>
+{% endblock %}
