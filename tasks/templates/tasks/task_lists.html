@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}My Tasks{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'tasks/styles.css' %}"/>
+
+<section class="container my-5 max-width-600">
+  <h1 class="mb-5 text-center text-primary fw-bold display-5">My Task Lists</h1>
+
+  <!-- Add New List button -->
+  <div class="d-flex justify-content-center mb-5">
+    <a href="{% url 'tasks:new-list' %}" class="btn btn-gradient btn-lg rounded-pill px-5 shadow-sm">
+      <i class="bi bi-plus-circle me-2"></i> Add New List
+    </a>
+  </div>
+
+  {% if task_lists %}
+    <div class="list-group">
+      {% for list in task_lists %}
+        <a href="{% url 'tasks:my-task-list' id=list.pk %}" 
+           class="list-group-item list-group-item-action mb-3 rounded-4 shadow-sm border-0 d-flex justify-content-between align-items-center transition-hover">
+          <span class="fw-semibold fs-5 text-truncate">{{ list.name }}</span>
+          <i class="bi bi-arrow-right-circle fs-4 text-primary"></i>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center text-muted fs-5 mt-5">You have no task lists yet.</p>
+  {% endif %}
+</section>
+{% endblock %}

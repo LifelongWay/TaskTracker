@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
+
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -23,7 +24,7 @@ def login_view(request):
             if user is not None:
                 # credentials are right - create session
                 login(request, user)
-                return redirect('tasks:my-tasks')
+                return redirect('tasks:my-task-lists')
             else:
                 return render(request, 'users/login.html', {'form': form, 'error': True})
         else:
