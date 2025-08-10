@@ -7,27 +7,54 @@
 <link rel="stylesheet" href="{% static 'tasks/styles.css' %}"/>
 
 <section class="container my-5 max-width-600">
-  <h1 class="mb-5 text-center text-primary fw-bold display-5">My Task Lists</h1>
+  <h1 class="mb-5 text-center text-primary fw-bold display-5">🗂️ My Task Lists</h1>
 
   <!-- Add New List button -->
   <div class="d-flex justify-content-center mb-5">
     <a href="{% url 'tasks:new-list' %}" class="btn btn-gradient btn-lg rounded-pill px-5 shadow-sm">
-      <i class="bi bi-plus-circle me-2"></i> Add New List
+      <i class="bi bi-plus-circle me-2"></i> ➕ Add New List
     </a>
   </div>
 
   {% if task_lists %}
     <div class="list-group">
       {% for list in task_lists %}
-        <a href="{% url 'tasks:my-task-list' list_id=list.pk %}" 
-           class="list-group-item list-group-item-action mb-3 rounded-4 shadow-sm border-0 d-flex justify-content-between align-items-center transition-hover">
-          <span class="fw-semibold fs-5 text-truncate">{{ list.name }}</span>
-          <i class="bi bi-arrow-right-circle fs-4 text-primary"></i>
-        </a>
+        <div class="list-group-item mb-3 rounded-4 shadow-sm border-0 d-flex justify-content-between align-items-center transition-hover">
+          <a href="{% url 'tasks:my-task-list' list_id=list.pk %}" 
+             class="flex-grow-1 text-decoration-none text-dark fw-semibold fs-5 text-truncate me-3">
+            📝 {{ list.name }}
+          </a>
+          <a href="{% url 'tasks:remove-list' list_id=list.pk %}" 
+             class="btn btn-sm text-danger remove-btn"
+             title="Delete List"
+             style="font-size: 1.5rem;"
+             onclick="return confirm('Are you sure you want to delete this list?');">
+            ❌
+          </a>
+        </div>
       {% endfor %}
     </div>
   {% else %}
-    <p class="text-center text-muted fs-5 mt-5">You have no task lists yet.</p>
+    <p class="text-center text-muted fs-5 mt-5">😴 You have no task lists yet.</p>
   {% endif %}
 </section>
+
+<style>
+.remove-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  transition: color 0.3s ease, transform 0.15s ease;
+  line-height: 1;
+}
+
+.remove-btn:hover,
+.remove-btn:focus {
+  color: #dc3545; /* Bootstrap danger red */
+  text-decoration: none;
+  transform: scale(1.2);
+  outline: none;
+  cursor: pointer;
+}
+</style>
 {% endblock %}
