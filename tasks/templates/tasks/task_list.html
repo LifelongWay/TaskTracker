@@ -7,7 +7,12 @@
 {% block content %}
 <div class="container max-width-600 mt-5">
   <h1 class="page-title mb-5 text-center text-primary fw-bold">{{ list.name }}</h1>
-  
+  <h2 class="text-center text-primary fw-bold">
+    <a href="{% url 'tasks:create-task' list_id=list.pk %}" class="text-decoration-none">
+        📝 New Task
+    </a>
+  </h2>
+
   {% if list.tasks.all %}
   <ul class="list-group shadow-sm rounded-4 overflow-hidden">
     {% for task in list.tasks.all %}

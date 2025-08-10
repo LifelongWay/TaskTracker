@@ -40,9 +40,9 @@ def new_task_list(request):
 
 
 @login_required(login_url = 'users:login')
-def task_list(request, id):
+def task_list(request, list_id):
     user = request.user
-    list = List.objects.filter(user = user).get(pk = id)
+    list = List.objects.filter(user = user).get(pk = list_id)
     return render(request, 'tasks/task_list.html', {"list": list})
 
 @login_required(login_url = 'users:login')
@@ -51,4 +51,19 @@ def remove_task(request, list_id, task_id):
     list = List.objects.filter(user = user).get(pk = list_id)
     task_to_delete = list.tasks.get(pk = task_id)
     task_to_delete.delete()
-    return redirect('tasks:my-task-list', id=list_id)
+    return redirect('tasks:my-task-list', list_id=list_id)
+
+@login_required(login_url='users:login')
+def create_task(request, list_id):
+    # make form
+    if request.method == 'POST':
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            new_task = form.save(commit = False)
+            new_task.list = List.objects.get(pk = list_id)
+            new_task.save()
+            return redirect('tasks:my-task-list', list_id=list_id)
+        else:
+            return render(request, 'tasks/task_create.html', {'list_id': list_id, 'form': form, 'error': True})
+    form = TaskForm()
+    return render(request, 'tasks/task_create.html', {'list_id': list_id, 'form': form})

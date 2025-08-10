@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    New Task
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 600px;">
+    <h2 class="mb-4 fw-semibold text-primary">Create New Task</h2>
+
+    {% if error %}
+    <div class="alert alert-danger shadow-sm" role="alert">
+        <strong>Oops!</strong> Wrong format. Please check your inputs.
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'tasks:create-task' list_id=list_id %}" novalidate>
+        {% csrf_token %}
+        
+        <div class="mb-4">
+            {{ form.as_p }}
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-primary w-100 shadow-sm" style="border-radius: 0.5rem;">
+            Submit
+        </button>
+    </form>
+</div>
+
+<style>
+/* Make description/textarea bigger and modern */
+form p textarea {
+    min-height: 150px;        /* bigger height */
+    resize: vertical;         /* allow vertical resize */
+    padding: 0.75rem 1rem;    /* more padding */
+    font-size: 1.1rem;        /* slightly bigger text */
+    border-radius: 0.5rem;    /* smooth rounded corners */
+    border: 1.5px solid #ced4da;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form p textarea:focus {
+    border-color: #0d6efd;
+    outline: none;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+}
+
+/* Improve labels */
+form p label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #212529;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Style inputs and selects for uniform modern look */
+form p input,
+form p select {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1.5px solid #ced4da;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form p input:focus,
+form p select:focus {
+    border-color: #0d6efd;
+    outline: none;
+    box-shadow: 0 0 8px rgba(13, 110, 253, 0.4);
+}
+
+/* Add subtle spacing between fields */
+form p {
+    margin-bottom: 1.25rem;
+}
+</style>
+{% endblock %}
