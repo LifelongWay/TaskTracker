@@ -77,5 +77,10 @@ def create_task(request, list_id):
 def edit_task(request, list_id, task_id):
     list_instance = get_object_or_404(List, pk = list_id)
     task_instance = get_object_or_404(Task, pk = task_id)
+
+    if request.method == 'POST':
+        form = TaskForm(request.POST, instance=task_instance)
+        form.save() # since already has user assigned to user field (not first edit)
+        return redirect('tasks:my-task-list', list_id = list_id )
     form = TaskForm(instance = task_instance)
     return render(request, 'tasks/task_list.html', {'list': list_instance, 'form': form, 'editing_task_id': task_id})
