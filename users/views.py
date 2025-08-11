@@ -8,7 +8,7 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('tasks:my-tasks')
+            return redirect('tasks:my-task-lists')
     form = UserCreationForm()
     return render(request, 'users/registration.html', {'form': form})
 

@@ -25,8 +25,10 @@ SECRET_KEY = "django-insecure-=s506xe18=7ataz@s8ijci)9w=)ywpyrd5j_i4&3+m9h^fpg*a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['easy-hats-invent.loca.lt', 'localhost']
-
+ALLOWED_HOSTS = ['poor-cougars-work.loca.lt', 'localhost']
+CSRF_TRUSTED_ORIGINS = [
+    'https://poor-cougars-work.loca.lt',
+]
 
 # Application definition
 

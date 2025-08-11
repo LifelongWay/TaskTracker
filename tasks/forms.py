@@ -14,5 +14,4 @@ class TaskForm(forms.ModelForm):
         widgets = {
             'due_date': forms.DateInput(attrs={ 'class': 'form-control', 'type': 'date'}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 5})
-        
         }
