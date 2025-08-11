@@ -1,3 +1,5 @@
+Here is the updated README section including the CSRF trusted origins part you requested:
+
 ````markdown
 # 🚀 Setup: LocalTunnel Quick Guide
 
@@ -30,6 +32,14 @@ Add your tunnel host to `ALLOWED_HOSTS` in `settings.py`:
 ALLOWED_HOSTS = ['your-tunnel-name.loca.lt', 'localhost', '127.0.0.1']
 ```
 
+**Important:** You also need to add your tunnel URL to `CSRF_TRUSTED_ORIGINS` to avoid CSRF verification errors:
+
+```python
+CSRF_TRUSTED_ORIGINS = [
+    'https://your-tunnel-name.loca.lt',  # <--- Add your tunnel URL here
+]
+```
+
 ---
 
 ### 4️⃣ Get Tunnel Password 🔑
@@ -59,7 +69,5 @@ Only share with trusted people!
 
 ---
 
-Questions? Open an issue! 📬
+> > > > > > > > > >## Questions? Open an issue! 📬
 
-```
-```
