@@ -38,6 +38,11 @@ def new_task_list(request):
     context['form'] = form
     return render(request, 'tasks/new-list.html', context)
 
+@login_required(login_url='users:login')
+def remove_task_list(request, list_id):
+    list_to_delete = get_object_or_404(List, pk = list_id)
+    list_to_delete.delete()
+    return redirect('tasks:my-task-lists')
 
 @login_required(login_url = 'users:login')
 def task_list(request, list_id):
