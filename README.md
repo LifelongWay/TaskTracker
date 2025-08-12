@@ -1,6 +1,3 @@
-Here is the updated README section including the CSRF trusted origins part you requested:
-
-````markdown
 # 🚀 Setup: LocalTunnel Quick Guide
 
 Expose your local server (e.g., Django) publicly with LocalTunnel 🔗
