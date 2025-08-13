@@ -51,3 +51,37 @@
   transform: scale(1.15);
   color: #c82333;
 }
+
+
+
+/* DROPDOWN - SORTING  */
+/* Container for the form */
+.task-sort-form {
+    display: flex;
+    justify-content: flex-start; /* aligns to left */
+    gap: 0.5rem;                 /* spacing if you add more elements later */
+    margin-bottom: 1.5rem;       /* same as mb-4 */
+}
+
+/* Style the select dropdown */
+.task-sort-form select {
+    font-size: 1.125rem;           /* slightly larger like form-select-lg */
+    font-weight: 600;               /* matches fw-semibold */
+    color: #0d6efd;                 /* Bootstrap primary text color */
+    background-color: #ffffff;      /* white background */
+    border: 1px solid #0d6efd;     /* primary colored border */
+    border-radius: 50px;            /* rounded-pill style */
+    padding: 0.5rem 1.5rem;         /* vertical + horizontal padding */
+    min-width: 220px;
+    max-width: 320px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); /* subtle shadow */
+    transition: border-color 0.2s, box-shadow 0.2s;       /* smooth hover */
+}
+
+/* Hover and focus states */
+.task-sort-form select:hover,
+.task-sort-form select:focus {
+    border-color: #0a58ca;          /* slightly darker blue on hover/focus */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    outline: none;
+}

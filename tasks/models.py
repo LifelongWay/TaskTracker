@@ -13,14 +13,14 @@ class List(models.Model): # task list
 
 class Task(models.Model):
     PRIORITY_CHOICES = [
-        ('low', 'Low'),
-        ('medium', 'Medium'),
-        ('high', 'High'),
+        (1, 'Low'),
+        (2, 'Medium'),
+        (3, 'High'),
     ]
     DIFFICULTY_CHOICES = [
-        ('easy', 'Easy'),
-        ('medium', 'Medium'),
-        ('difficult', 'Difficult'),
+        (1, 'Easy'),
+        (2, 'Medium'),
+        (3, 'Difficult'),
     ]
 
     list = models.ForeignKey(List, on_delete=models.CASCADE, related_name = 'tasks')
@@ -29,8 +29,8 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add = True)
     updated_at = models.DateTimeField(auto_now = True)
     due_date = models.DateTimeField(blank = True, null = True)
-    priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default='medium')
-    difficulty = models.CharField(max_length=10, choices=DIFFICULTY_CHOICES ,default = 'easy')
+    priority = models.IntegerField(choices=PRIORITY_CHOICES, default= 2)
+    difficulty = models.IntegerField(choices=DIFFICULTY_CHOICES ,default = 1)
 
     def __str__(self):
         return self.title

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import TaskListForm, TaskForm
+from .forms import TaskListForm, TaskForm, OrderForm
 from .models import List, Task
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -7,10 +7,10 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url= 'users:login')
 def all_tasks(request):
     user = request.user 
-
+        
     context = {
         'active_page': 'my-task-lists',
-        'task_lists': List.objects.filter(user = user), 
+        'task_lists': List.objects.filter(user = user),
     }    
     
     return render(request, 'tasks/task_lists.html', context)
@@ -47,8 +47,23 @@ def remove_task_list(request, list_id):
 @login_required(login_url = 'users:login')
 def task_list(request, list_id):
     user = request.user
+
+    # form for changing dropdown of order
+    order_form = OrderForm()
+    order_by = '-priority'
+    # user changed order by - dropdown value
+    if request.method == 'POST':
+        order_form = OrderForm(request.POST)
+        if order_form.is_valid():
+            order_by = order_form.cleaned_data['order']
+        else:
+            # error
+            pass
+    
     list = List.objects.filter(user = user).get(pk = list_id)
-    return render(request, 'tasks/task_list.html', {"list": list})
+    tasks = list.tasks.all().order_by(order_by)
+    
+    return render(request, 'tasks/task_list.html', {"list": list, "tasks": tasks, "order_form": order_form})
 
 @login_required(login_url = 'users:login')
 def remove_task(request, list_id, task_id):
