@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.utils import timezone
 from .forms import TaskListForm, TaskForm, OrderForm
+from django.db.models import F, ExpressionWrapper, fields
 from .models import List, Task
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -61,8 +63,18 @@ def task_list(request, list_id):
             pass
     
     list = List.objects.filter(user = user).get(pk = list_id)
-    tasks = list.tasks.all().order_by(order_by)
+    # if order_by == 'due_date':
+    #     tasks
+    # else:
     
+    if order_by == 'due_date': tasks = list.tasks.all().annotate(
+        remaining_time = (ExpressionWrapper((F('due_date') - timezone.now()), output_field= fields.DurationField()))
+    ).order_by(F('remaining_time').desc(nulls_last = True))
+    elif order_by == '-due_date' : tasks = list.tasks.all().annotate(
+        remaining_time = (ExpressionWrapper((F('due_date') - timezone.now()), output_field= fields.DurationField()))
+    ).order_by(F('remaining_time').asc(nulls_last = True))
+    else:
+        tasks = list.tasks.all().order_by(order_by)
     return render(request, 'tasks/task_list.html', {"list": list, "tasks": tasks, "order_form": order_form})
 
 @login_required(login_url = 'users:login')
